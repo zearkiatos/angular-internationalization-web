@@ -22,17 +22,19 @@ jobs:
         npm install
         npm install -g @angular/cli
     - name: Public URL
-      run: export PUBLIC_URL=https://zearkiatos.github.io/fall-nursery-web/
+      run: export PUBLIC_URL=https://zearkiatos.github.io/angular-internationalization-web/
     - name: Create .env
       run: |
         touch .env &&
         echo "NODE_ENV=${NODE_ENV}" > .env &&
         echo "NG_CLI_ANALYTICS=${NG_CLI_ANALYTICS}" >> .env &&
-        echo "PORT=${PORT}" >> .env
+        echo "PORT=${PORT}" >> .env &&
+        echo "LANGUAGE_API_BASE_URL=${LANGUAGE_API_BASE_URL}" >>
       env:
         NODE_ENV: ${{ secrets.NODE_ENV }}
         PORT: ${{ secrets.PORT }}
         NG_CLI_ANALYTICS: ${{ secrets.NG_CLI_ANALYTICS }}
+        LANGUAGE_API_BASE_URL: ${{ secrets.LANGUAGE_API_BASE_URL }}
     - name: Build docker 🐳
       run: docker build . -t=angular-internationalization-web:build-$GITHUB_RUN_NUMBER
     - name: Build
