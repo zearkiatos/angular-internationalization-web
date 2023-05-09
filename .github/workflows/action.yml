@@ -29,7 +29,7 @@ jobs:
         echo "NODE_ENV=${NODE_ENV}" > .env &&
         echo "NG_CLI_ANALYTICS=${NG_CLI_ANALYTICS}" >> .env &&
         echo "PORT=${PORT}" >> .env &&
-        echo "LANGUAGE_API_BASE_URL=${LANGUAGE_API_BASE_URL}" >>
+        echo "LANGUAGE_API_BASE_URL=${LANGUAGE_API_BASE_URL}"
       env:
         NODE_ENV: ${{ secrets.NODE_ENV }}
         PORT: ${{ secrets.PORT }}
