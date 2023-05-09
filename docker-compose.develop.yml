@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: develop.Dockerfile
+    container_name: "angular-internationalization-web"
+    ports:
+      - "0.0.0.0:8001:8000"
+    volumes:
+      - .:/app
+    env_file:
+      - .env.dev
+    expose:
+      - "8000"
+    command: tail -f /dev/null
+    tty: true
+
