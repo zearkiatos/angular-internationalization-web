@@ -67,7 +67,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "es": {
-              "browserTarget": "angular-internalization-web:build:es"
+              "browserTarget": "angular-internationalization-web:build:es"
             },
             "production": {
               "browserTarget": "angular-internationalization-web:build:production"
